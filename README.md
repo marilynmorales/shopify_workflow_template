@@ -3,6 +3,27 @@ Base template for Shopify development and deployment
 
 * * *
 
+## File Structure
+### Add your Stylesheet
+./src/styles
+
+### Add your scripts
+./src/scripts
+
+### Add your shopify theme
+./src/liquid
+To reference scripts and styles add the following to your header
+
+```liquid
+// script
+<script src="{{ 'index.js' | asset_url }}" defer="defer"></script>
+
+// stylesheet
+<link href='{{ 'main.css' | asset_url }}' rel='stylesheet' type='text/css' media='all' />
+
+````
+
+
 ### Commands
 | Type | Command |
 | --- | --- |
@@ -12,7 +33,7 @@ Base template for Shopify development and deployment
 | Watch | npm run watch |
 
 
-### Set up automatic deployment
+## Set up automatic deployment
 Uncomment the following lines in `./github/workflows/main.yml`
 ```yml
 3 #on:
@@ -20,8 +41,12 @@ Uncomment the following lines in `./github/workflows/main.yml`
 5 #    branches: [ main ]
 6 #  workflow_dispatch:
 ```
+Create secrets in your repo with the following keys and their respective values\
+**SHOPIFY_PROD_URL**\
+**SHOPIFY_PROD_THEME_ID**\
+**SHOPIFY_PROD_PASSWORD**
 
-*** :mag: Issues
+### :mag: Issues
 Open up a [ticket](https://github.com/marilynmorales/shopify_workflow/issues/new)
 
 * * *
