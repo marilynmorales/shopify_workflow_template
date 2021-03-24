@@ -1,18 +1,17 @@
 ## Shopify Workflow Template
 Base template for Shopify development and deployment
 
-* * *
-
 ## File Structure
-### Add your Stylesheet
-./src/styles
+### ./src/styles/main.scss
+import styles here.
 
-### Add your scripts
-./src/scripts
+### ./src/scripts/index.js
+Add scripts here
 
-### Add your shopify theme
-./src/liquid
-To reference scripts and styles add the following to your header
+### ./src/liquid
+Move the shopify theme folder here
+
+To reference scripts and styles add the following to header
 
 ```liquid
 // script
@@ -34,14 +33,9 @@ To reference scripts and styles add the following to your header
 
 
 ## Set up automatic deployment
-Uncomment the following lines in `./github/workflows/main.yml`
-```yml
-3 #on:
-4 #  push:
-5 #    branches: [ main ]
-6 #  workflow_dispatch:
-```
-Create secrets in your repo with the following keys and their respective values\
+Uncomment the lines in `./github/workflows/main.yml`
+
+Create secrets in the repo with the following keys and their respective values\
 **SHOPIFY_PROD_URL**\
 **SHOPIFY_PROD_THEME_ID**\
 **SHOPIFY_PROD_PASSWORD**

@@ -1,23 +1,23 @@
-name: Deploy To Shopify
-
+#name: Deploy To Shopify
+#
 #on:
 #  push:
 #    branches: [ main ]
 #  workflow_dispatch:
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-      
-      - name: Build
-        run: npm ci 
-      
-      - name: Create Config
-        run: |
-          node ./.dev/scripts/configure.js --store=${{ secrets.SHOPIFY_PROD_URL }} --themeid=${{ secrets.SHOPIFY_PROD_THEME_ID }} --password=${{ secrets.SHOPIFY_PROD_PASSWORD }} --env=production
-      - name: Deploy
-        run: NODE_ENV=production npm run deploy
+#
+#jobs:
+#  build:
+#    runs-on: ubuntu-latest
+#
+#    steps:
+#      - name: Checkout repository
+#        uses: actions/checkout@v2
+#      
+#      - name: Build
+#        run: npm ci 
+#      
+#      - name: Create Config
+#        run: |
+#          node ./.dev/scripts/configure.js --store=${{ secrets.SHOPIFY_PROD_URL }} --themeid=${{ secrets.SHOPIFY_PROD_THEME_ID }} --password=${{ secrets.SHOPIFY_PROD_PASSWORD }} --env=production
+#      - name: Deploy
+#        run: NODE_ENV=production npm run deploy
