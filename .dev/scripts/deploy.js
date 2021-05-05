@@ -17,7 +17,7 @@ function deploy() {
   themeKit.command(command, {
     dir, 
     verbose, 
-    "allow-live": allowLive
+    "allow-live": allowLive,
     env, 
     config: path.join(dir, "./config.yml")
   });
