@@ -26,9 +26,9 @@ To reference scripts and styles add the following to header
 ### Commands
 | Type | Command |
 | --- | --- |
-| Create Config | npm run create:config -- --env=[development \| production] --store=[xxxx.myshopify.com] --password=[xxxx] --themeid=[xxxxx] |
+| Create Config | npm run create:config -- --env=[development | production] --store=[xxxx.myshopify.com] --password=[xxxx] --theme_id=[xxxxx] |
 | Build | npm run build |
-| Deploy | npm run deploy |
+| Deploy | npm run deploy [--allow-live] |
 | Watch | npm run watch |
 
 
