@@ -2,7 +2,7 @@ const themeKit = require('@shopify/themekit');
 const yargs = require('yargs');
 const path = require("path");
 
-let { command = "deploy", env = null, verbose = true } = yargs(process.argv).argv;
+let { command = "deploy", env = null, verbose = true, allowLive = false } = yargs(process.argv).argv;
 
 if(typeof process.env.NODE_ENV !== "undefined" && env === null) {
   env = process.env.NODE_ENV;
@@ -17,6 +17,7 @@ function deploy() {
   themeKit.command(command, {
     dir, 
     verbose, 
+    "allow-live": allowLive
     env, 
     config: path.join(dir, "./config.yml")
   });
