@@ -18,6 +18,6 @@
 #      
 #      - name: Create Config
 #        run: |
-#          node ./.dev/scripts/configure.js --store=${{ secrets.SHOPIFY_PROD_URL }} --themeid=${{ secrets.SHOPIFY_PROD_THEME_ID }} --password=${{ secrets.SHOPIFY_PROD_PASSWORD }} --env=production
+#          node ./.dev/scripts/configure.js --store=${{ secrets.SHOPIFY_PROD_URL }} --theme_id=${{ secrets.SHOPIFY_PROD_THEME_ID }} --password=${{ secrets.SHOPIFY_PROD_PASSWORD }} --env=production
 #      - name: Deploy
 #        run: NODE_ENV=production npm run deploy
